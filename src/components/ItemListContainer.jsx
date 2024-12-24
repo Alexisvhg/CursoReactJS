@@ -1,16 +1,19 @@
+import { useState, useEffect } from 'react';
+import ItemList from './ItemList';
 
-function ItemListContainer({bg,cl,estilo,tm}) {
+function ItemListContainer() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=811') 
+      .then((res) => res.json())
+      .then((res) => setItems(res.results))
+      .catch((error) => console.error('Error de carga en lista', error));
+  }, []);
+
   return (
-  
-    <div><ul style={{backgroundColor: bg ,color: cl,fontStyle: estilo,fontSize: tm}}>
-    <li>ESCUDO 1</li>
-    <li>BANDERA</li>
-    <li>COPA</li>
-    <li>CAMISETA</li>
-  </ul></div>
+    <ItemList items={items} />
   );
 }
-
-
 
 export default ItemListContainer;

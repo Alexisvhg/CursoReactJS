@@ -22,23 +22,7 @@ function App() {
       </Routes>
 
     </BrowserRouter>
-
-
-  /*<div>
-      <NavBar 
-        label = 'PokeTienda'
-      />
-
-      <ItemListContainer 
-        bg = 'white'
-        cl= 'red'
-        estilo = 'italic'
-        tm = '30px'
-      />
-
-  </div>
-*/
-
+    
   )
 }
 
