@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc } from "firebase/firestore";
 import {app} from "./config";
 
 const db = getFirestore(app);
@@ -15,12 +15,12 @@ export const getProducts = async () => {
 
 export const getProductsByCategory = async (categoria) => {
     const q = query(collection(db, "productos"), where("categoria", "==", categoria));
-
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
+    const querySnapshot = await getDocs(q);
+    const products = [];
+    querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-  console.log(doc.data());
-  products.push(doc.data())
+    console.log(doc.data());
+    products.push(doc.data());
 
 })
 
@@ -36,7 +36,6 @@ export const getDocument = async (id) => {
     if (docSnap.exists()) {
       return docSnap.data()
     } else {
-      // docSnap.data() will be undefined in this case
       console.log("No such document!");
     }
 
@@ -44,8 +43,8 @@ export const getDocument = async (id) => {
 
 export const creatOrder = async (order) => {
 try {
-    const docRef = await addDoc(collection(db, "orden"), order);
+    const docRef = await addDoc(collection(db, "ordenes"), order);
     }catch(e){
-        console.error("Error adding document: ", e);
+        console.error("Error agregando Orden de compra", e);
     }
 }

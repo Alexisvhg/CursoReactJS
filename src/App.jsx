@@ -17,8 +17,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/type" element={<App />} />
-        <Route path="/pokemon" element={<App />} />
+        <Route path="/premium" element={<App />} />
+        <Route path="/varios" element={<App />} />
       </Routes>
 
     </BrowserRouter>

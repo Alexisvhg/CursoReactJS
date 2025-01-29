@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
 import ItemList from './ItemList';
-import { getProducts } from '../firebase/db';
+import { getProducts, getProductsByCategory } from '../firebase/db';
 
 function ItemListContainer() {
   const [items, setItems] = useState([]);
-  const {category} = useParams ()
+  const {id} = useParams ()
+
   useEffect(() => {  
-      if(category){
-        getProducts(category)
+      if(id){
+        getProductsByCategory(id)
         .then(res => setItems(res))
       }else {
         getProducts()
         .then(res => setItems(res))
       }
-    }, [category]);
+    }, [id]);
 
   return (
     <ItemList items={items} />
