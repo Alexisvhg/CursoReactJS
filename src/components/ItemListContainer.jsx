@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
+import { getProducts } from '../firebase/db';
 
 function ItemListContainer() {
   const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=811') 
-      .then((res) => res.json())
-      .then((res) => setItems(res.results))
-      .catch((error) => console.error('Error de carga en lista', error));
-  }, []);
+  const {category} = useParams ()
+  useEffect(() => {  
+      if(category){
+        getProducts(category)
+        .then(res => setItems(res))
+      }else {
+        getProducts()
+        .then(res => setItems(res))
+      }
+    }, [category]);
 
   return (
     <ItemList items={items} />

@@ -11,10 +11,10 @@ function Item ({item}){
 return(
 <Col >
     <Card style={{ width: '18rem' }} >
-    <Card.Img variant="top" src="" />
+    <Card.Img variant="top" src="item.imagen" />
     <Card.Body>
       <Card.Title>{item.name}</Card.Title>
-      <Button variant="primary">{item.url}</Button>
+      <Button variant="primary">{item.nombre}</Button>
     </Card.Body>
     </Card>
   </Col>
