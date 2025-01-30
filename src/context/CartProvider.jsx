@@ -5,7 +5,11 @@ export default function CartProvider({children}) {
 const [cart, setCart] = useState([]);
 
     const addToCart = item => {
-        //completar con clase 6
+       const isInCart= cart.some(prod =>prod.id === item.id);
+
+       if(!isInCart) return (setCart([...cart, item]))
+
+        alert('El producto fue agregado al carrito');
     }
 
     const getQty = () => {

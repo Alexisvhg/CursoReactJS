@@ -6,8 +6,6 @@ import {Link} from 'react-router';
 
 
 function Item ({item}){
-//const para leer el item.url y traer descriptción e imagen
-
 
 return(
 <Col >

@@ -5,7 +5,8 @@ function ItemDetail ({ item }) {
     <div>
     <img src={item?.imagen} alt= {item?.nombre} />
     <h2>{item?.nombre}</h2>
-    <p>{item?.descripcion}</p> <ItemCount item={item} />
+    <p>{item?.descripcion}</p> 
+    <ItemCount item={item} />
     </div>
     )
 }
