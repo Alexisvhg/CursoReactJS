@@ -9,7 +9,9 @@ const [cart, setCart] = useState([]);
     }
 
     const getQty = () => {
-     //completar de anteultima con clase 6   
+     const cantidades = cart.map(item => item.quantity);
+     const cantidadTotal = cantidades.reduce((acc, current) => acc + current, 0);
+     return cantidadTotal;
     }
 
     const getTotal = () => {
