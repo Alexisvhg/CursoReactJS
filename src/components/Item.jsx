@@ -12,18 +12,17 @@ return(
     <Card style={{ width: '18rem' }} >
     <Card.Img variant="top" src={item.imagen} />
     <Card.Body>
-      <Card.Title>{item.nombre}</Card.Title>
+      <Card.Title>{item.Nombre}</Card.Title>
       <Card.Text>
-        {item.descripcion}
+        {item.Descripcion}
       </Card.Text>
       <Card.Text>
-        {item.categoria}
+        {item.Tipo}
       </Card.Text>
       <Card.Text>
-        {item.precio}
+        {item.Precio}
       </Card.Text>
-      <Button variant="primary" as={Link} to={'/item/id'}>Ver Detalle</Button>
-      {/* cambiar el id de item por el id del document de firebase */}
+      <Button variant="primary" as={Link} to={`/item/${item.id}`}>Ver Detalle</Button>
     </Card.Body>
     </Card>
   </Col>

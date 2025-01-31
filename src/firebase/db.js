@@ -13,8 +13,8 @@ export const getProducts = async () => {
     return products
 }
 
-export const getProductsByCategory = async (categoria) => {
-    const q = query(collection(db, "productos"), where("categoria", "==", categoria));
+export const getProductsByTipo = async (categoria) => {
+    const q = query(collection(db, "productos"), where("Tipo", "==", categoria));
     const querySnapshot = await getDocs(q);
     const products = [];
     querySnapshot.forEach((doc) => {

@@ -19,7 +19,7 @@ const [cart, setCart] = useState([]);
     }
 
     const getTotal = () => {
-        const totales = cart.map(item => item.quantity * item.price);
+        const totales = cart.map(item => item.quantity * item.Precio);
         const total = totales.reduce((acc, current) => acc + current, 0);
         return total;
     }

@@ -6,7 +6,7 @@ function CartList({items}) {
         <ListGroup className='w-50'>
             {items.map((item,index) => (
                 <ListGroup.Item className='d-flex justify-content-between' key={index}>
-                    {item.nombre} x {item.quantity} ${item.precio}
+                    {item.Nombre} x {item.quantity} ${item.Precio}
                     <Button variant='danger'>Remover</Button>
                 </ListGroup.Item>
             ))}

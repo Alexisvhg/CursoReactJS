@@ -20,7 +20,7 @@ function Cart () {
     <div className='d-flex flex-column justify-content-center align-items-center'>
         <CartList items={cart}/>
         <p className='mt-3 fw-bold'>Total: $ {getTotal()}</p>
-        <Button variant='dark' className='w-50'>Finalizar Compra </Button>;
+        <Button variant='dark' className='w-50' as={Link} to={`/checkout`}>Finalizar Compra</Button>
     </div>
   )}
 
