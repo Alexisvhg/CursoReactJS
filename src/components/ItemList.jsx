@@ -8,8 +8,7 @@ function ItemList({items}){
 return(
 <Container>
       <Row>
-        {items.map((item, index) => <Item item={item} key={index}/> 
-               )}
+        {items.map((item, index) => <Item item={item} key={index}/> )}
       </Row>
     </Container>
     )

@@ -13,7 +13,8 @@ function NavBar() {
         <Nav.Link to="/category/premium" as={Link}>Premium</Nav.Link>
         <Nav.Link to="/category/varios" as={Link}>varios</Nav.Link>
       </Nav>
-      <CartWidget />
+     <CartWidget />
+     
     </Container>
   </Navbar>
   );

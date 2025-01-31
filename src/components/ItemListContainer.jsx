@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import ItemList from './ItemList';
 import { getProducts, getProductsByCategory } from '../firebase/db';

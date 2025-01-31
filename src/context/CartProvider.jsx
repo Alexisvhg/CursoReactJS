@@ -4,17 +4,23 @@ import { useState } from "react";
 export default function CartProvider({children}) {
 const [cart, setCart] = useState([]);
 
-    const addToCart = item => {
-        //completar con clase 6
+    const addToCart = (item) => {
+       const isInCart= cart.some(prod =>prod.id === item.id);
+
+       if(!isInCart) return (setCart([...cart, item]))
+
+        alert('El producto fue agregado al carrito');
     }
 
     const getQty = () => {
-     //completar de anteultima con clase 6   
+     const cantidades = cart.map(item => item.quantity);
+     const cantidadTotal = cantidades.reduce((acc, current) => acc + current, 0);
+     return cantidadTotal;
     }
 
     const getTotal = () => {
         const totales = cart.map(item => item.quantity * item.price);
-        const total = totales.reduce((acc, current) => acc + curremt, 0);
+        const total = totales.reduce((acc, current) => acc + current, 0);
         return total;
     }
 

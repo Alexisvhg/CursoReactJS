@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import {ItemDetail} from "./ItemDetail";
+import  ItemDetail  from "./ItemDetail";
 import { getDocument } from "../firebase/db";
 
 function ItemDetailContainer () {
     const [item, setItem] = useState();
-    const {id} = useParams()
+    const { id } = useParams()
+    
     
     useEffect (() => {
     getDocument(id)
