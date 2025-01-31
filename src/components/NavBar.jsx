@@ -8,7 +8,7 @@ function NavBar() {
   return (
   <Navbar bg="dark" data-bs-theme="dark">
     <Container>
-      <Navbar.Brand to="/" as={Link}>Tienda-curso</Navbar.Brand>
+      <Navbar.Brand to="/" as={Link}>Tienda-Pokemon</Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link to="/tipo/Agua" as={Link}>Agua</Nav.Link>
         <Nav.Link to="/tipo/Hierba" as={Link}>Hierba</Nav.Link>
