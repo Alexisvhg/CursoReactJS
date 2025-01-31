@@ -3,11 +3,13 @@ import Form from 'react-bootstrap/Form';
 import { useCart } from '../context/CartContext';
 import { creatOrder } from '../firebase/db';
 import { serverTimestamp } from 'firebase/firestore';
+import { Link, useNavigate  } from 'react-router';
 
 
 
 function Checkout () {
-    const { cart, getTotal } = useCart();
+    const { cart, getTotal, clearCart } = useCart();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,6 +28,10 @@ function Checkout () {
         }
 
         creatOrder(order);
+        clearCart();
+        if (window.confirm('Compra creada con éxito.')) {
+            navigate('/');
+            }
     }
 
     return (

@@ -24,8 +24,16 @@ const [cart, setCart] = useState([]);
         return total;
     }
 
+    const clearCart = () => {
+        setCart([]);
+    }
+
+    const removeItem = (id) => {
+        setCart(cart.filter(item => item.id !== id));
+    }
+
     return(
-        <CartContext.Provider value={{cart, addToCart, getQty, getTotal}}>
+        <CartContext.Provider value={{cart, addToCart, getQty, getTotal, clearCart, removeItem}}>
             {children}
         </CartContext.Provider>
     )
